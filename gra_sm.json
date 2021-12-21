@@ -1,0 +1,111 @@
+{
+    "with_distrib":	false,
+    "_comment": " model parameters",
+    "model":{
+	"type_map":		[ "C", "O", "H"],
+	"data_stat_nbatch":	10,
+	"descriptor": {
+	    "type":		"se_a",
+	    "sel":		[ 68, 46, 92],
+        "rcut_smth": 5.80,
+        "rcut":		6.00,
+        "neuron":		[50, 100, 200],
+	    "resnet_dt":	false,
+	    "axis_neuron":	16,
+	    "seed":		1,
+        "_comment": " that's all"
+	},
+	"fitting_net": {
+	    "neuron":		[ 240, 240, 240],
+	    "resnet_dt":	true,
+	    "seed":		1,
+	    "_comment":		" that's all"
+	},
+	"_comment":	" that's all"
+    },
+    
+    "learning_rate" :{
+	"type":		"exp",
+	"decay_rate":	0.95,
+	"start_lr":	0.001,	
+	"stop_lr":	3.51e-8,
+	"_comment":	"that's all"
+    },
+
+    "loss" : {
+	"start_pref_e":	0.02,
+	"limit_pref_e":	1.0,
+	"start_pref_f":	1000,
+	"limit_pref_f":	8,
+	"start_pref_v":	0,
+	"limit_pref_v":	0,
+	"_comment":	"that's all"
+    },
+
+    "_comment": " traing controls",
+    "training": {
+	"systems":	["../dataset/d = 6.9/normal_dens/5/",
+                 "../dataset/d = 9.1/normal_dens/5/",
+                 "../dataset/d = 12.3/normal_dens/5/", 
+                 "../dataset/d = 16.3/normal_dens/5/",                  
+                 "../dataset/d = 6.9/1000K/1/",                 
+                 "../dataset/d = 9.1/1000K/1/",
+                 "../dataset/d = 12.3/1000K/1/",           
+                 "../dataset/d = 16.3/1000K/1/",                   
+                 "../dataset/d = 6.9/dens+20%/1/",     
+                 "../dataset/d = 6.9/normal_dens/1/",
+                 "../dataset/d = 9.1/normal_dens/1/",
+                 "../dataset/d = 12.3/normal_dens/1/",
+                 "../dataset/d = 16.3/normal_dens/1/",                 
+                 "../dataset/d = 6.9/1000K/2/",  
+                 "../dataset/d = 9.1/1000K/2/",
+                 "../dataset/d = 12.3/1000K/2/",
+                 "../dataset/d = 16.3/1000K/2/",
+                 "../dataset/d = 6.9/dens+20%/2/",     
+                 "../dataset/d = 6.9/normal_dens/2/",
+                 "../dataset/d = 9.1/normal_dens/2/",
+                 "../dataset/d = 12.3/normal_dens/2/",
+                 "../dataset/d = 16.3/normal_dens/2/",
+                 "../dataset/d = 6.9/dens+10%/1/",
+                 "../dataset/d = 9.1/dens+10%/1/",
+                 "../dataset/d = 12.3/dens+10%/1/",
+                 "../dataset/d = 16.3/dens+10%/1/",              
+                 "../dataset/d = 6.9/normal_dens/3/",
+                 "../dataset/d = 9.1/normal_dens/3/",
+                 "../dataset/d = 12.3/normal_dens/3/",
+                 "../dataset/d = 16.3/normal_dens/3/",                
+                 "../dataset/d = 6.9/normal_dens/4/",
+                 "../dataset/d = 9.1/normal_dens/4/",
+                 "../dataset/d = 12.3/normal_dens/4/",
+                 "../dataset/d = 16.3/normal_dens/4/",                
+                 "../dataset/d = 6.9/dens+10%/2/",
+                 "../dataset/d = 9.1/dens+10%/2/",
+                 "../dataset/d = 12.3/dens+10%/2/",
+                 "../dataset/d = 16.3/dens+10%/2/",               
+                 "../dataset/d = 6.9/normal_dens/6/",
+                 "../dataset/d = 9.1/normal_dens/6/",
+                 "../dataset/d = 12.3/normal_dens/6/",
+                 "../dataset/d = 16.3/normal_dens/6/",     
+                 ], 
+	"set_prefix":	"set",    
+	"stop_batch":	3000000,
+	"batch_size":	1,
+
+	"seed":		1,
+
+	"_comment": " display and restart",
+	"_comment": " frequencies counted in batch",
+	"disp_file":	"lcurve.out",
+	"disp_freq":	100,
+	"numb_test":	10,
+	"save_freq":	1000,
+	"save_ckpt":	"model.ckpt",
+	"load_ckpt":	"model.ckpt",
+	"disp_training":true,
+	"time_training":true,
+	"_comment":	"that's all"
+    },
+
+    "_comment":		"that's all"
+}
+
